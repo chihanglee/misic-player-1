@@ -12,7 +12,7 @@ body {
   z-index: -1;
   background: url(../music/if-you.png) center center no-repeat;
   background-size: cover;
-  filter: blur(10px);
+  filter: blur(2px);
   transform: scale(1.2);
 }
 
