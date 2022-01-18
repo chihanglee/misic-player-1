@@ -80,12 +80,14 @@ body {
   margin-top: 8px;
 }
 
-/* #canvas1 {
+ #canvas1 {
   position: fixed;
-  left: 100px;
-  z-index: 2;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+/*
 #canvas2 {
   position: fixed;
   right: 100px;
