@@ -16,14 +16,12 @@ body {
   transform: scale(1.2);
 }
 
-
 .player {
   position: fixed;
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  
   width: 500px;
   padding: 20px 40px;
   border-radius: 4px;
@@ -38,6 +36,7 @@ body {
 .player .buttons {
   margin-top: 10px;
 }
+
 .player .buttons .iconfont {
   font-size: 32px;
   margin-right: 8px;
@@ -101,4 +100,5 @@ body {
   transform: translateX(-50%);
   bottom: 0;
   z-index: 1;
-} */
+}
+*/
