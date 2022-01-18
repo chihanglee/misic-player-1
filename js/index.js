@@ -4,6 +4,7 @@ fetch('./data.json').then(res => res.json()).then(ret => {
   setMusic()
 })
 
+
 const $ = selector => document.querySelector(selector)
 
 const $playingBtn = $('.player .icon-playing')
@@ -17,38 +18,39 @@ const $progress = $('.player .progress')
 let index = 0
 let clock = null
 let audioObject = document.querySelector('#audio')
-audioObject.volumn = 0.1
-
 
 function setMusic() {
   let curMusic = musicList[index]
   audioObject.src = curMusic.src
   $auther.innerText = curMusic.auther
   $title.innerText = curMusic.title
-  //audioObject.play()
+  // audioObject.play()
 }
 
 function secondToText(second) {
   second = parseInt(second)
   let min = parseInt(second / 60)
   let sec = second % 60
-  sec = sec < 10 ? '0' + sec : '' + sec
+  sec = (sec + '').length == 1 ? '0' + sec : sec
+  //sec = sec < 10 ? '0' + sec : '' + sec 第二种写法
   return min + ':' + sec
 }
-
 
 $playingBtn.onclick = function () {
   if (this.classList.contains('icon-playing')) {
     this.classList.remove('icon-playing')
     this.classList.add('icon-pause')
     audioObject.play()
+
     clock = setInterval(function () {
       let curTime = audioObject.currentTime
       let totalTime = audioObject.duration
       let percent = curTime / totalTime
       $progress.style.width = percent * 100 + '%'
-      $time.innerText = secondToText(curTime) + ' / ' + secondToText(totalTime)
+      $time.innerText = secondToText(curTime) + '/' + secondToText(totalTime)
+
     }, 1000)
+
   } else {
     this.classList.remove('icon-pause')
     this.classList.add('icon-playing')
@@ -60,7 +62,6 @@ $playingBtn.onclick = function () {
 $nextBtn.onclick = function () {
   index++
   index = index % musicList.length
-  console.log(index)
   setMusic()
 }
 
