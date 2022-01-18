@@ -24,7 +24,7 @@ function setMusic() {
   audioObject.src = curMusic.src
   $auther.innerText = curMusic.auther
   $title.innerText = curMusic.title
-  // audioObject.play()
+  audioObject.play()
 }
 
 function secondToText(second) {
