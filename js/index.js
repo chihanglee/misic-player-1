@@ -1,8 +1,10 @@
+console.log('hello')
 let musicList = []
 fetch('./data.json').then(res => res.json()).then(ret => {
   musicList = ret
   setMusic()
 })
+
 
 const $ = selector => document.querySelector(selector)
 
@@ -24,26 +26,27 @@ function setMusic() {
   audioObject.src = curMusic.src
   $auther.innerText = curMusic.auther
   $title.innerText = curMusic.title
-} 
+  audioObject.play()
+}
 
 function secondToText(second) {
   second = parseInt(second)
-  let min = parseInt(second/60)
-  let sec = second%60
+  let min = parseInt(second / 60)
+  let sec = second % 60
   sec = sec < 10 ? '0' + sec : '' + sec
   return min + ':' + sec
 }
 
-$playingBtn.onclick = function() {
-  if(this.classList.contains('icon-playing')) {
+$playingBtn.onclick = function () {
+  if (this.classList.contains('icon-playing')) {
     this.classList.remove('icon-playing')
     this.classList.add('icon-pause')
     audioObject.play()
-    clock = setInterval(function() {
+    clock = setInterval(function () {
       let curTime = audioObject.currentTime
       let totalTime = audioObject.duration
-      let percent = curTime/totalTime
-      $progress.style.width = percent*100 + '%'
+      let percent = curTime / totalTime
+      $progress.style.width = percent * 100 + '%'
       $time.innerText = secondToText(curTime) + ' / ' + secondToText(totalTime)
     }, 1000)
   } else {
@@ -51,19 +54,19 @@ $playingBtn.onclick = function() {
     this.classList.add('icon-playing')
     audioObject.pause()
     clearInterval(clock)
-  }  
+  }
 }
 
-$nextBtn.onclick = function() {
+$nextBtn.onclick = function () {
   index++
   index = index % musicList.length
   console.log(index)
   setMusic()
 }
 
-$preBtn.onclick = function() {
+$preBtn.onclick = function () {
   index--
-  index = (index+musicList.length) % musicList.length
+  index = (index + musicList.length) % musicList.length
   setMusic()
 }
 
