@@ -4,9 +4,7 @@ fetch('./data.json').then(res => res.json()).then(ret => {
   setMusic()
 })
 
-
 const $ = selector => document.querySelector(selector)
-
 const $playingBtn = $('.player .icon-playing')
 const $preBtn = $('.player .icon-play-left')
 const $nextBtn = $('.player .icon-play-right')
