@@ -1,10 +1,8 @@
 let musicList = []
 fetch('./data.json').then(res => res.json()).then(ret => {
-  console.log(ret)
   musicList = ret
   setMusic()
 })
-
 
 const $ = selector => document.querySelector(selector)
 
@@ -24,7 +22,6 @@ audioObject.volumn = 0.1
 
 function setMusic() {
   let curMusic = musicList[index]
-  console.log(curMusic)
   audioObject.src = curMusic.src
   $auther.innerText = curMusic.auther
   $title.innerText = curMusic.title
@@ -45,8 +42,6 @@ $playingBtn.onclick = function () {
     this.classList.remove('icon-playing')
     this.classList.add('icon-pause')
     audioObject.play()
-    console.log(audioObject.duration)
-    console.log(audioObject.currentTime)
     clock = setInterval(function () {
       let curTime = audioObject.currentTime
       let totalTime = audioObject.duration
@@ -75,4 +70,4 @@ $preBtn.onclick = function () {
   setMusic()
 }
 
-new Wave().fromElement("audio","canvas1", {type:"fireworks"})
+new Wave().fromElement("audio", "canvas1", { type: "fireworks" })
