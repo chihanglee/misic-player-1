@@ -1,7 +1,5 @@
-console.log('hello')
 let musicList = []
 fetch('./data.json').then(res => res.json()).then(ret => {
-  console.log(ret)
   musicList = ret
   setMusic()
 })
@@ -22,14 +20,12 @@ let clock = null
 let audioObject = document.querySelector('#audio')
 audioObject.volumn = 0.1
 
-
 function setMusic() {
   let curMusic = musicList[index]
   console.log(curMusic)
   audioObject.src = curMusic.src
   $auther.innerText = curMusic.auther
   $title.innerText = curMusic.title
-  //audioObject.play()
 } 
 
 function secondToText(second) {
@@ -39,7 +35,6 @@ function secondToText(second) {
   sec = sec < 10 ? '0' + sec : '' + sec
   return min + ':' + sec
 }
-
 
 $playingBtn.onclick = function() {
   if(this.classList.contains('icon-playing')) {
@@ -79,4 +74,3 @@ $preBtn.onclick = function() {
 new Wave().fromElement("audio","canvas1", {type:"fireworks"})
 // new Wave().fromElement("audio","canvas2", {type:"shine rings"})
 // new Wave().fromElement("audio","canvas3", {type:"shine rings"})
-
