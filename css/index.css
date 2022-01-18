@@ -16,12 +16,14 @@ body {
   transform: scale(1.2);
 }
 
+
 .player {
   position: fixed;
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+  
   width: 500px;
   padding: 20px 40px;
   border-radius: 4px;
@@ -36,7 +38,6 @@ body {
 .player .buttons {
   margin-top: 10px;
 }
-
 .player .buttons .iconfont {
   font-size: 32px;
   margin-right: 8px;
@@ -51,7 +52,6 @@ body {
 .player .texts {
   margin-left: 20px;
 }
-
 .player .texts h3 {
   margin-top: 14px;
   margin-bottom: 8px;
@@ -80,7 +80,7 @@ body {
   margin-top: 8px;
 }
 
- #canvas1 {
+#canvas1 {
   position: fixed;
   top: 40%;
   left: 50%;
