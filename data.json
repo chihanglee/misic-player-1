@@ -5,16 +5,16 @@
   "img": "./music/if-you.png"
 },
  {
-   "src": "./music/夏日示爱-郭彩洁-暖手心.m4a",
-   "title": "暖手心",
-   "auther": "郭彩洁",
-   "img": "./music/夏日示爱-郭彩洁-暖手心.jpg"
- },
- {
    "src": "./music/玫瑰.mp3",
    "title": "玫瑰",
    "auther": "贰佰",
    "img": "./music/玫瑰.jpeg"
+ },
+ {
+   "src": "./music/夏日示爱-郭彩洁-暖手心.m4a",
+   "title": "暖手心",
+   "auther": "郭彩洁",
+   "img": "./music/夏日示爱-郭彩洁-暖手心.jpg"
  },
  {
    "src": "./music/成全-林宥嘉-成全.m4a",
