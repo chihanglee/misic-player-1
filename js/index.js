@@ -5,7 +5,6 @@ fetch('./data.json').then(res => res.json()).then(ret => {
   setMusic()
 })
 
-
 const $ = selector => document.querySelector(selector)
 
 const $playingBtn = $('.player .icon-playing')
@@ -20,6 +19,7 @@ let index = 0
 let clock = null
 let audioObject = document.querySelector('#audio')
 audioObject.volumn = 0.1
+
 
 function setMusic() {
   let curMusic = musicList[index]
