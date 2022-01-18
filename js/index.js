@@ -21,7 +21,6 @@ audioObject.volumn = 0.1
 
 function setMusic() {
   let curMusic = musicList[index]
-  console.log(curMusic)
   audioObject.src = curMusic.src
   $auther.innerText = curMusic.auther
   $title.innerText = curMusic.title
@@ -40,8 +39,6 @@ $playingBtn.onclick = function() {
     this.classList.remove('icon-playing')
     this.classList.add('icon-pause')
     audioObject.play()
-    console.log(audioObject.duration)
-    console.log(audioObject.currentTime)
     clock = setInterval(function() {
       let curTime = audioObject.currentTime
       let totalTime = audioObject.duration
