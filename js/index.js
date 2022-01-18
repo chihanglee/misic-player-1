@@ -58,9 +58,12 @@ $playingBtn.onclick = function() {
 
 $nextBtn.onclick = function() {
   index++
-  index = index % musicList.length
-  console.log(index)
-  setMusic()
+   index++
+  curMusic = musicList[index]
+  audioObject.src = curMusic.src
+  $auther.innerText = curMusic.auther
+  $title.innerText = curMusic.title
+  audioObject.play()
 }
 
 $preBtn.onclick = function() {
