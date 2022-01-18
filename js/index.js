@@ -77,6 +77,6 @@ $preBtn.onclick = function() {
 }
 
 new Wave().fromElement("audio","canvas1", {type:"shine rings"})
-new Wave().fromElement("audio","canvas2", {type:"shine rings"})
-new Wave().fromElement("audio","canvas3", {type:"shine rings"})
+// new Wave().fromElement("audio","canvas2", {type:"shine rings"})
+// new Wave().fromElement("audio","canvas3", {type:"shine rings"})
 
